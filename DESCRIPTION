@@ -10,4 +10,5 @@ Imports:
     readr,
     readxl,
     snakecase,
+    stringr,
     tidyr
