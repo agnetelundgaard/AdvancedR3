@@ -59,6 +59,10 @@ list(
     name = lipidomics,
     command = readr::read_csv(file, show_col_types = FALSE)
   ),
+  tar_target(
+    name = table_descriptive_stats,
+    command = create_table_descriptive_stats(lipidomics)
+  ),
   tar_quarto(
     name = quarto_doc,
     path = "docs/learning.qmd"

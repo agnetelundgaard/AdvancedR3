@@ -8,8 +8,10 @@ BugReports: https://github.com/agnetelundgaard/AdvancedR3/issues
 Imports: 
     dplyr,
     fs,
+    ggplot2,
     glue,
     here,
+    magrittr,
     quarto,
     readr,
     readxl,
