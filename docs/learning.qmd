@@ -28,3 +28,12 @@ tar_read(table_descriptive_stats) %>%
 ```{r}
 tar_read(plot_distributions)
 ```
+
+## 
+
+```{r}
+lipidomics %>%
+  filter(metabolite == "Cholesterol") %>%
+  preprocess() %>%
+  fit_model(class ~ value)
+```
