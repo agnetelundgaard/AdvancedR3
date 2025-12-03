@@ -1,11 +1,15 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 data_file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|-679625259|data/lipidomics.csv|t20398.5433376109s|s24277b|24277|file|local|vector|||0||
 file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20398.5433376109s|s24277b|24277|file|local|vector|||0||
-%>%|function|9d4d5831fa85d604
-clean|function|fd397691e82dc98e
-create_table_descriptive_stats|function|37536751b2844a68
-create_plot_distributions|function|c07cdffaaf413623
 lipidomics|stem|5d1f0ee686087bf2|eb102cf90880c28f|bdc4a1ea8f746163|-1498393010||t20425.5811208504s|s4150b|4150|rds|local|vector|||0.343||
 plot_distributions|stem|a8952e565bc26917|01ce942be37808d6|3b37ecb098ee03da|222080706||t20425.5811279164s|s275215b|275215|rds|local|vector|||0.5||
 table_descriptive_stats|stem|fee8a35eae1a3246|34e33bc9eaef7fce|3ea2ec92a9e69884|1291134815||t20425.5811285531s|s519b|519|rds|local|vector|||0.015||
-quarto_doc|stem|26167cb9e2487bb2|17ff11b3307356f6|8de1718cf9c1b2a1|1582462002|docs/learning.html*docs/learning.qmd|t20425.5812041184s|s27105b|27105|file|local|vector|||6.578|pakke 'quarto' blev bygget under R version 4.5.2|
+model_results|stem|aeb1e722583200ab|8dc321a94f7f9089|157c84b8d0ba06b0|-1523611067||t20425.6297764042s|s312b|312|rds|local|vector|||0.078||
+%>%|function|9d4d5831fa85d604
+fit_model|function|f6902ae172649d8c
+preprocess|function|9640079b4d93b190
+clean|function|fd397691e82dc98e
+create_table_descriptive_stats|function|37536751b2844a68
+create_plot_distributions|function|c07cdffaaf413623
+create_model_results|function|3f21837b6edfc84d
+quarto_doc|stem|36f2a714768c7d19|84a9b6a5242fc083|edb3933aae4ea358|1582462002|docs/learning.html*docs/learning.qmd|t20425.6305173232s|s28207b|28207|file|local|vector|||6.515|pakke 'quarto' blev bygget under R version 4.5.2|

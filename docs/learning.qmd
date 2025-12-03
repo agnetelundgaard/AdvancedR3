@@ -29,8 +29,8 @@ tar_read(table_descriptive_stats) %>%
 tar_read(plot_distributions)
 ```
 
-## 
+## Model results from logistic regression
 
 ```{r}
-create_model_results(lipidomics)
+tar_read(model_results)
 ```
