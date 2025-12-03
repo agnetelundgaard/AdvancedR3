@@ -1,6 +1,8 @@
 #' Create descriptive table
 #'
-#' @param data
+#' @param data Lipidomics data
+#'
+#' @return A tibble
 create_table_descriptive_stats <- function(data) {
   data |>
     dplyr::summarise(mean = mean(value), sd = sd(value), .by = metabolite) |>
