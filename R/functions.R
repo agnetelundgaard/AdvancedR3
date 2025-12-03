@@ -86,3 +86,15 @@ fit_model <- function(data, model) {
       .before = everything()
     )
 }
+
+#' Model results
+#'
+#' @param data lipidomics data
+#'
+#' @returns glm results
+create_model_results <- function(data) {
+  data %>%
+    dplyr::filter(metabolite == "Cholesterol") %>%
+    preprocess() %>%
+    fit_model(class ~ value)
+}
