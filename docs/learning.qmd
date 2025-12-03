@@ -8,16 +8,18 @@ format: html
 
 ```{r setup}
 library(targets)
+library(tidyverse)
 tar_config_set(store = here::here("_targets"))
 source(here::here("R/functions.R"))
 lipidomics <- tar_read(lipidomics)
 ```
 
+## Making a table
+
 ```{r}
-# Code chunk
+lipidomics %>%
+  summarise(mean = mean(value), sd = sd(value), .by = metabolite) %>%
+  mutate(across(c(mean, sd), ~ round(., 1))) %>%
+  mutate(mean_sd = glue::glue("{mean} ({sd})")) %>%
+  select(Metabolite = metabolite, `mean (SD)` = mean_sd)
 ```
-
-## This is poorly formatted
-
--   Definitely should have an empty space above this list.
--   This isn't a list, why not?
