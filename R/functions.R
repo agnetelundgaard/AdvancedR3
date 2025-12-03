@@ -44,3 +44,16 @@ clean <- function(data){
     dplyr::summarise(value = mean(value),
                      .by = c(code, gender, age, class, metabolite))
 }
+
+#' Preprocess by scaling
+#'
+#' @param data cleaned proteomics data
+#'
+#' @returns a tibble
+preprocess <- function(data) {
+  data %>%
+    dplyr::mutate(
+      class = factor(class),
+      value = scale(value)
+    )
+}
