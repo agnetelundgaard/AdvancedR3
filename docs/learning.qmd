@@ -44,6 +44,23 @@ lipidomics %>%
   fit_all_models()
 ```
 
+## Figure of model estimates
+
+```{r}
+model_results <- tar_read(model_results)
+
+
+model_results %>%
+  filter(term == "value" & std.error <= 2 & estimate <= 5) %>%
+  ggplot(aes(x = estimate, y = metabolite)) +
+  geom_pointrange(aes(
+    xmin = estimate - std.error,
+    xmax = estimate + std.error
+  )) +
+  geom_vline(xintercept = 1, linetype = "dashed") +
+  facet_grid(cols = vars(model))
+```
+
 ## Appendix
 
 ```{r}
