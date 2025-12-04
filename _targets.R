@@ -72,6 +72,10 @@ list(
     name = model_results,
     command = create_model_results(lipidomics)
   ),
+  tar_target(
+    name = plot_model_results,
+    command = create_plot_model_results(model_results)
+  ),
   tar_quarto(
     name = quarto_doc,
     path = "docs/learning.qmd"

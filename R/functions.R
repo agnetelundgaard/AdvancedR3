@@ -113,3 +113,20 @@ fit_all_models <- function(data) {
     purrr::map(\(model) fit_model(data, model = model)) %>%
     purrr::list_rbind()
 }
+
+#' Plot of model results
+#'
+#' @param results result data frame
+#'
+#' @returns plot
+create_plot_model_results <- function(results) {
+  results %>%
+    dplyr::filter(term == "value" & std.error <= 2 & estimate <= 5) %>%
+    ggplot2::ggplot(ggplot2::aes(x = estimate, y = metabolite)) +
+    ggplot2::geom_pointrange(ggplot2::aes(
+      xmin = estimate - std.error,
+      xmax = estimate + std.error
+    )) +
+    ggplot2::geom_vline(xintercept = 1, linetype = "dashed") +
+    ggplot2::facet_grid(cols = ggplot2::vars(model))
+}
