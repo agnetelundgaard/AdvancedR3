@@ -31,6 +31,24 @@ tar_read(plot_distributions)
 
 ## Model results from logistic regression
 
+## Running multiple models
+
 ```{r}
-tar_read(model_results)
+just_cholesterol <- lipidomics %>%
+  filter(metabolite == "Cholesterol") %>%
+  preprocess()
+
+lipidomics %>%
+  filter(metabolite == "Cholesterol") %>%
+  preprocess() %>%
+  fit_all_models()
+```
+
+## Appendix
+
+```{r}
+tar_read(model_results) %>%
+  knitr::kable(
+    caption = "Model output from logistic regression"
+  )
 ```
